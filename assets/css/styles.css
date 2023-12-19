@@ -1,0 +1,253 @@
+@import "reset.css";
+@import url(https://fonts.bunny.net/css?family=allerta:400|bree-serif:400|roboto-mono:400,500,700);
+
+:root {
+    --blueCv: #0b486b;
+}
+
+body {
+    font-family: 'allerta', sans-serif;
+}
+
+header {
+    background-color: var(--blueCv);
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+.contactInformation {
+    display: none;
+}
+
+.headerNav {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    padding: .5em;
+}
+
+.headerNav-items {
+    background-color: var(--blueCv);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+    position: absolute;
+    top: 3.5em;
+    left: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 0;
+    transition: .5s height 0.2s;
+}
+
+.show-headerNav-items {
+    height: calc(100vh - 4em);
+}
+
+.headerNav-item {
+    display: flex;
+    justify-content: center;
+}
+
+.headerNav-link {
+    display: block;
+    text-align: center;
+}
+
+.burger {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    width: 3em;
+    height: 3em;
+    padding: 0;
+}
+
+.burger-icon {
+    display: block;
+}
+
+.burger-icon,
+.burger-icon::before,
+.burger-icon::after {
+    background-color: white;
+    width: 2.5em;
+    height: .4em;
+    border-radius: .45em;
+}
+
+.burger-icon::before,
+.burger-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.burger-icon::before {
+    transform: translateY(-.8em);
+}
+
+.burger-icon::after {
+    transform: translateY(.8em);
+}
+
+.container {
+    padding: 1em;
+    width: 100%;
+}
+
+.container .container__section:last-child {
+    border: unset;
+}
+
+.container__section {
+    margin: 1em 0;
+    padding: .5em 0 1em;
+}
+
+.container__section::after {
+    display: block;
+    margin: 2em auto 0;
+    content: "";
+    width: 85%;
+    height: 1px;
+    background-color: black;
+}
+
+.section-title {
+    text-transform: uppercase;
+    width: fit-content;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: var(--blueCv);
+    margin: 0 auto;
+}
+
+.section-title::after {
+    display: block;
+    content: "";
+    height: 2px;
+    width: 100%;
+    margin-top: .25em;
+    background-color: var(--blueCv);
+}
+
+.section-contain {
+    text-align: left;
+    padding-top: 1em;
+}
+
+.section-paragraph {
+    line-height: 1.5em;
+}
+
+.section-skills ul,
+.section-softSkills ul,
+.section-hobbies ul {
+    text-align: center;
+}
+
+.section-skills li,
+.section-softSkills li,
+.section-hobbies li {
+    padding: .5em 0;
+}
+
+@media screen and (min-width: 905px) {
+    body {
+        display: flex;
+    }
+
+    header {
+        max-width: 30vw;
+        height: 100vh;
+    }
+
+    .headerNav-item:hover > .headerNav-link::after {
+        width: 100%;
+    }
+
+    .headerNav-items > .headerNav-item:first-child > .headerNav-link::after {
+        display: none;
+    }
+
+    .headerNav-link::after {
+        display: block;
+        content: "";
+        height: 2px;
+        width: 0;
+        margin-top: .25em;
+        background-color: white;
+        transition: .5s width;
+    }
+
+    .contactInformation {
+        display: block;
+        padding: 1em;
+    }
+
+    .contactInformation p {
+        display: flex;
+        flex-direction: column;
+        padding: .5em 0;
+        text-transform: none;
+    }
+
+    .span-contact {
+        text-transform: capitalize;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    .headerNav {
+        width: auto;
+        height: 100vh;
+        flex-direction: column;
+    }
+
+    h1 {
+        width: 100%;
+        text-align: center;
+        border-bottom: 2px solid white;
+        padding: 1em;
+        font-size: 2em;
+    }
+
+    .headerNav-items {
+        width: auto;
+        height: 100%;
+        position: static;
+        overflow: visible;
+        justify-content: space-around;
+    }
+
+    .item-contactInformation {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .container {
+        padding: 0 3em;
+    }
+
+    .container__section {
+        text-align: left;
+    }
+
+    .section-contain {
+        padding: 1em 10em 0;
+    }
+
+    .section-contactInformation {
+        display: none;
+    }
+}
